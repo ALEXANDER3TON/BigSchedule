@@ -3,10 +3,7 @@ import useGenerateDateTime from "../../Hooks/useGenerateDateTime/useGenerateDate
 import { dataSample } from "../../Constant/dataSample";
 import customStyle from "./BigCalendar.module.scss";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
-import { useNavigate } from "react-router-dom";
 const BigCalendar: React.FC = (): JSX.Element => {
-  const navigate = useNavigate();
-
   const {
     currentMonth,
     currentYear,
@@ -110,7 +107,8 @@ const BigCalendar: React.FC = (): JSX.Element => {
                                     customStyle[event.event_type]
                                   }`}
                                   onClick={() => {
-                                    event.event_link && openInNewTab(event.event_link);
+                                    event.event_link &&
+                                      openInNewTab(event.event_link);
                                   }}
                                 >
                                   <span>{event.event_name}</span>
