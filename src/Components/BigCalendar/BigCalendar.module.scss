@@ -1,0 +1,138 @@
+.BigCalendarContainer {
+  width: 100%;
+  height: 100%;
+  padding: 18px;
+  .BigCalendarHeader {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 18px;
+    div {
+      font-size: 2.1rem;
+      font-weight: 600;
+      text-align: center;
+      white-space: nowrap;
+    }
+    button {
+      background-color: transparent;
+      border: none;
+      cursor: pointer;
+      font-size: 1.8rem;
+      font-weight: 600;
+      color: #b6b6b6;
+      &:hover {
+        color: #000000;
+      }
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .todayBtn {
+      padding: 9px 27px;
+      border: 3px solid #000000;
+      border-radius: 30px;
+      transition: all 0.3s linear;
+      color: #000000;
+      &:hover {
+        background-color: #000000;
+        color: #ffffff;
+      }
+    }
+  }
+
+  .BigCalendarBody {
+    table {
+      width: 100%;
+      table-layout: fixed;
+      border-collapse: collapse;
+      color: #6e6e6e;
+      thead {
+        .row,
+        tr {
+          text-align: center;
+
+          .cell,
+          th {
+            font-size: 1.5rem;
+            padding: 9px 18px;
+          }
+        }
+      }
+      tbody {
+        .row,
+        tr {
+          text-align: center;
+          overflow: hidden;
+
+          .cell,
+          td {
+            border: 1px solid #e0e0e0;
+            vertical-align: top;
+            overflow: hidden;
+            &.hasEvent {
+              background-color: #b9ebff8e;
+            }
+
+            &.activeDay {
+              background-color: #22629b;
+              div {
+                .day {
+                  color: white;
+                }
+              }
+            }
+
+            div {
+              display: flex;
+              flex-direction: column;
+              height: 123px;
+              gap: 6px;
+              padding: 3px;
+
+              .day {
+                flex: 1;
+              }
+              .eventContainer {
+                overflow-y: scroll;
+                scrollbar-width: 0px;
+                scroll-behavior: smooth;
+
+                &::-webkit-scrollbar {
+                  width: 0px;
+                  height: 0px;
+                }
+                .event {
+                  border-left: 6px solid;
+                  border-radius: 6px;
+                  padding: 9px;
+                  height: 100%;
+                  white-space: nowrap;
+                  cursor: pointer;
+                  span {
+                    overflow: hidden;
+                  }
+
+                  &.webinar{
+                    border-color: #ff9900;
+                    background-color: #fce38a;
+                  }
+
+                  &.appointment {
+                    border-color: #996dc6;
+                    background-color: #dcb9ff;
+                  }
+
+                  &.other {
+                    border-color: #00b33c;
+                    background-color: #b3ffcc;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
